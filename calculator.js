@@ -1,10 +1,3 @@
-            //dann noch buttons so machen das sie sich verändern beim klicken
-            // leerzeichen zwischen zahlen und operator für die leichtere lesbarkeit
-            // x mit * ersetzen 
-            // / mit dem symbol von geteilt ersetzen
-        // rückwerts taste
-        // funktionen umschreiben, code kompremieren, ordnung schaffen ^^
-        // test schreiben und testen ^^ 
 const screenExpression = document.getElementById("term");
 const screenInput = document.getElementById("input");
 const listOfNumberButtons = document.querySelectorAll("button.number");
