@@ -1,0 +1,99 @@
+body {
+    background-color: lightskyblue;
+}
+
+.box {
+    padding: 5px;
+    width: 320px;
+    height: 360px;
+    background-color: black;
+    margin: 0 auto;
+    border: 2px solid grey;
+}
+
+.screen {
+    height: 60px;
+    width: 320px;
+    color: white;
+}
+
+.screens {
+    padding: 5px;
+    height: 20px;
+    text-align: right;
+}
+
+.grid-container {
+    background-color: yellow;
+    width: 320px;
+    height: 300px;
+    display: grid;
+    grid-template-columns: repeat(1fr, 4);
+    grid-template-rows: repeat(1fr, 5);
+}
+
+
+
+.AC {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: red;
+}
+
+.backslash {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: darkgrey;
+}
+
+.x {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: darkgrey;
+}
+
+.minus {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: darkgrey;
+}
+
+.plus {
+    background-color: darkgrey;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    border: 1px solid black;
+}
+
+.zero {
+    grid-column-start: 3;
+    grid-column-end: 1;
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+.dot, .zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine {
+    background-color: grey;
+}
+.equals {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 4;
+    grid-row-end: 6;
+    background-color: blue;
+}
+
+footer {
+    margin-top: 10px;
+    text-align: center;
+}
