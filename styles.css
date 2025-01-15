@@ -76,6 +76,14 @@ button {
     border: 1px solid black;
 }
 
+button:hover {
+    background-color: brown;
+}
+
+button:active {
+    background-color: green;
+}
+
 .zero {
     grid-column-start: 3;
     grid-column-end: 1;
