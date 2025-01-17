@@ -52,9 +52,10 @@ body {
 }
 
 .grid-container {
-    background-color: yellow;
+    background-color: black;
     width: 320px;
     height: 300px;
+    border-radius: 5px;
     display: grid;
     grid-template-columns: repeat(1fr, 4);
     grid-template-rows: repeat(1fr, 5);
