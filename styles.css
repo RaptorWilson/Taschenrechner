@@ -9,12 +9,40 @@ body {
     background-color: black;
     margin: 0 auto;
     border: 2px solid grey;
+    border-radius: 10px;
+}
+
+#first-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.memory-box {
+    width: 235px;
+    height: 280px;
+    position: absolute;
+    background-color: grey;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: black;
+    display: none; 
+}
+
+.memory {
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 5px;
+    color: black;
 }
 
 .screen {
-    height: 60px;
-    width: 320px;
+    height: 56px;
+    width: 318px;
     color: white;
+    background-color: black;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    border: 1px solid grey;
 }
 
 .screens {
@@ -74,10 +102,18 @@ button {
     margin: 0;
     padding: 0;
     border: 1px solid black;
+    border-radius: 5px;
 }
 
 button:hover {
     background-color: brown;
+}
+
+.memory-btn {
+    margin: 4px;
+    background-color: grey;
+    color: white;
+    border: 1px solid lightgray;
 }
 
 button:active {
