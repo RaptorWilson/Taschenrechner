@@ -3,6 +3,8 @@ const screenInput = document.getElementById("input");
 const listOfNumberButtons = document.querySelectorAll("button.number");
 const dotBtn = document.getElementById("dot");
 const zeroBtn = document.getElementById("zero");
+const memoryBtn = document.getElementById("memory-btn");
+const memoryBox = document.getElementById("memory-box");
 let hasDot = 0;
 let listOfInputs = [];
 let listOfIndexOfNegation = [];
@@ -200,6 +202,7 @@ equalsBtn.addEventListener("click", () => {
     // angeben das es ein ergbnis gibt, screenExpression anpassen, listOfInputs zurcüksetzten, screenInput zum weiterrechnen vorbereiten
     ans = 1;
     screenExpression.textContent += " = " + filterdList[0];
+    memoryBox.innerHTML += `<div class="memory"> ${screenExpression.textContent} </div>` ;
     listOfInputs = [];
     screenInput.textContent = filterdList[0];
 })  
@@ -226,7 +229,20 @@ const handleACBtn = () => {
     hasDot = 0;
     operatorCount = 0;
     ans = 0;
+    memoryBox.innerHTML = "";
+
 };
 // AC button eventListener
 const ACBtn = document.getElementsByClassName("AC");
 ACBtn[0].addEventListener("click", handleACBtn)
+
+const handleMemoryBtnClick = () => {
+    // box anzeigen lassen 
+    if (memoryBox.style.display === "none" || memoryBox.style.display === "") {
+        memoryBox.style.display = "block";
+    //box verstecken
+    } else {
+        memoryBox.style.display = "none";
+}};
+
+memoryBtn.addEventListener("click", handleMemoryBtnClick);
