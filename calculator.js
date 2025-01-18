@@ -17,6 +17,11 @@ listOfNumberButtons.forEach((btn) => {
         if (operatorCount !== 0){
             resetCount();
         };
+        // falsche nullen entfernen z.B 06 statt 6
+        if (screenInput.textContent[0] === "0" && hasDot === 0) {
+            screenInput.textContent = screenInput.textContent.slice(0,-1);
+            screenExpression.textContent = screenExpression.textContent.slice(0,-1);
+        }
         // falls wir schon ein ergebis hatten, danach noch eine zahl drücken wird alles zurückgesetzt und nur der letzte input behalten
         if (ans === 1){
             handleACBtn();
@@ -43,9 +48,7 @@ dotBtn.addEventListener("click",() => {
     screenExpression.textContent += ".";
 }})
 
-// 0 ist besonders da man keine zahlen außer decimalzahlen mit 0 beginnen also ist 0123 entweder ungültig
-// oder man lässt 0 einfach weg => 0 ersetzen falls allein und zahl gedrückt wird
-    // !!!!fehlt noch der teil mit der führenden 0 !!!!
+// keine weiderholung von nullen am start
 zeroBtn.addEventListener("click", () => {
     //den operator speicher der list hinzufügen und counter resetten, input zurücksetzten
     if (operatorCount !== 0){
