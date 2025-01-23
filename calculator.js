@@ -63,58 +63,55 @@ zeroBtn.addEventListener("click", () => {
         screenExpression.textContent += "0";
     }
 })
+
 const dotOperationen = () => {
-    //listOfInputs sollte immer ungerader größe sein deshalb enden wir nach 0-indexierung von beliebiger länge auf 0
-    //idee rechnung von hinten an der liste, durchgehen in dreier paaren, berechne das ergebnis des paare, speichere das ergebnis
-    // an dem vordersten Index, ersetzte die benutzten mit "already used", verschiebe die index um 2 nach rechts. falls der operator nicht "x" oder "/" ist
+    //idee rechnung vom vorderen der liste, durchgehen in dreier paaren, berechne das ergebnis des paares, speichere das ergebnis
+    // an dem hintersten Index, ersetzte die benutzten mit "already used", verschiebe die index um 2 nach rechts. falls der operator nicht "x" oder "/" ist
     // nur verschieben
-    let curIndex = listOfInputs.length - 1;
-    while (curIndex !== 0) {
-        let secondNumber = listOfInputs[curIndex];
-        let operator = listOfInputs[curIndex - 1];
-        let firstNumber = listOfInputs[curIndex - 2];
+    let curIndex = 0;
+    while (curIndex < listOfInputs.length) {
+        let firstNumber = listOfInputs[curIndex];
+        let operator = listOfInputs[curIndex + 1];
+        let secondNumber = listOfInputs[curIndex + 2];
+
         if (operator === "x" ) {
             const solution = multi(firstNumber, secondNumber);
-            listOfInputs[curIndex - 2] = solution;
-            listOfInputs[curIndex - 1] = "already used";
             listOfInputs[curIndex] = "already used";
-            curIndex -= 2;
+            listOfInputs[curIndex + 1] = "already used";
+            listOfInputs[curIndex + 2] = solution;
+            curIndex += 2;
             continue;
         } else if (operator === "/") {
             const solution = divide(firstNumber, secondNumber);
-            listOfInputs[curIndex - 2] = solution;
-            listOfInputs[curIndex - 1] = "already used";
             listOfInputs[curIndex] = "already used";
-            curIndex -= 2;
+            listOfInputs[curIndex + 1] = "already used";
+            listOfInputs[curIndex + 2] = solution;
+            curIndex += 2;
             continue;
         } else {
-            curIndex -= 2;
+            curIndex += 2;
             continue;
         }
     }
 }
 
-    //strich operationen durchgehen
+//strich operationen durchgehen
 const strichOperationen = (filterdList) => {
     // curIndex platzieren
-    let curIndex2 = filterdList.length - 1;
-    while (curIndex2 > 1) {
-        let secondNumber = filterdList[curIndex2];
-        let operator = filterdList[curIndex2 - 1];
-        let firstNumber = filterdList[curIndex2 - 2];
+    let curIndex2 = 0;
+    while (curIndex2 < filterdList.length) {
+        let firstNumber = filterdList[curIndex2];
+        let operator = filterdList[curIndex2 + 1];
+        let secondNumber = filterdList[curIndex2 + 2];
         if (operator === "+") {
             const solution = ad(parseFloat(firstNumber), parseFloat(secondNumber));
-            filterdList[curIndex2 - 2] = solution;
-            filterdList.pop();
-            filterdList.pop();
+            filterdList[curIndex2 + 2] = solution;
         }
         if (operator === "-") {
             const solution = sub(firstNumber, secondNumber);
-            filterdList[curIndex2 - 2] = solution;
-            filterdList.pop();
-            filterdList.pop();
+            filterdList[curIndex2 + 2] = solution;
         }
-        curIndex2 -= 2;
+        curIndex2 += 2;
     }
 }
 
@@ -204,10 +201,10 @@ equalsBtn.addEventListener("click", () => {
 
     // angeben das es ein ergbnis gibt, screenExpression anpassen, listOfInputs zurcüksetzten, screenInput zum weiterrechnen vorbereiten
     ans = 1;
-    screenExpression.textContent += " = " + filterdList[0];
+    screenExpression.textContent += " = " + filterdList[filterdList.length - 1];
     memoryBox.innerHTML += `<div class="memory"> ${screenExpression.textContent} </div>` ;
     listOfInputs = [];
-    screenInput.textContent = filterdList[0];
+    screenInput.textContent = filterdList[filterdList.length - 1];
 })  
 
 // operator/n der liste hinzufügen, operatorCount zurücksetzten, ,screenInput leeren
