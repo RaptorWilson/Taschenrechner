@@ -6,10 +6,10 @@ body {
     padding: 5px;
     width: 320px;
     height: 360px;
+    border-radius: 10px;
     background-color: black;
     margin: 0 auto;
     border: 2px solid grey;
-    border-radius: 10px;
 }
 
 #first-row {
@@ -18,7 +18,7 @@ body {
 }
 
 .memory-box {
-    width: 237px;
+    width: 230px;
     height: 268px;
     position: absolute;
     background-color: grey;
@@ -50,7 +50,7 @@ body {
     height: 20px;
     text-align: right;
 }
-
+/* grid layout 1 */
 .grid-container {
     background-color: black;
     width: 320px;
@@ -61,42 +61,43 @@ body {
     grid-template-rows: repeat(1fr, 5);
 }
 
-
-
-.AC {
+.klammer-auf {
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 1;
     grid-row-start: 1;
-    grid-row-end: 2;
-    background-color: red;
+    grid-row-end: 1;
+    background-color: darkgray;
 }
 
-.backslash {
+.klammer-zu {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    background-color: darkgray;
+}
+
+.redo {
     grid-column-start: 3;
     grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 2;
-    background-color: darkgrey;
+    grid-row-end: 1;
+    color: black;
+    font-weight: bold;
 }
 
-.x {
+.AC {
     grid-column-start: 4;
     grid-column-end: 4;
     grid-row-start: 1;
-    grid-row-end: 2;
-    background-color: darkgrey;
+    grid-row-end: 1;
+    color: black;
+    font-weight: bold;
 }
 
-.minus {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    background-color: darkgrey;
-}
 
-.plus {
-    background-color: darkgrey;
+.operatoren, .AC, .redo {
+    background-color: darkgray;
 }
 
 button {
@@ -110,6 +111,10 @@ button:hover {
     background-color: brown;
 }
 
+button:active {
+    background-color: green;
+}
+
 .memory-btn {
     margin: 4px;
     background-color: grey;
@@ -117,26 +122,14 @@ button:hover {
     border: 1px solid lightgray;
 }
 
-button:active {
-    background-color: green;
-}
-
-.zero {
-    grid-column-start: 3;
-    grid-column-end: 1;
-    grid-row-start: 5;
-    grid-row-end: 6;
-}
-.dot, .zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine {
+.zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .dot {
     background-color: grey;
 }
+
 .equals {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 4;
-    grid-row-end: 6;
     background-color: blue;
 }
+
 
 footer {
     margin-top: 10px;
