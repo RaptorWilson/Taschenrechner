@@ -175,7 +175,7 @@ equalsBtn.addEventListener("click", () => {
     };
     // schauen ob letzter input ein operator war, falls ja diesen löschen
     if (listOfOperatoren.includes(screenInput.textContent)) {
-        screenExpression.textContent.slice(0,-1);
+        screenExpression.textContext = screenExpression.textContent.slice(0,-1);
     }
     // sonst ist es eine unaufgelistete zahl, diese dann zur liste hinzufügen, screenInput wieder leeren um wiederholtes "=" drücken das selbe noch mal zählen lassen 
     else {
