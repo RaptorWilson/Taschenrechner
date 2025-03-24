@@ -2,14 +2,29 @@ body {
     background-color: lightskyblue;
 }
 
+button {
+    margin: 0;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: brown;
+}
+
+button:active {
+    background-color: green;
+}
+
 .box {
     padding: 5px;
     width: 320px;
     height: 360px;
+    border-radius: 10px;
     background-color: black;
     margin: 0 auto;
     border: 2px solid grey;
-    border-radius: 10px;
 }
 
 #first-row {
@@ -18,7 +33,7 @@ body {
 }
 
 .memory-box {
-    width: 237px;
+    width: 230px;
     height: 268px;
     position: absolute;
     background-color: grey;
@@ -33,6 +48,13 @@ body {
     border-radius: 5px;
     margin: 5px;
     color: black;
+}
+
+.memory-btn {
+    margin: 4px;
+    background-color: grey;
+    color: white;
+    border: 1px solid lightgray;
 }
 
 .screen {
@@ -50,92 +72,75 @@ body {
     height: 20px;
     text-align: right;
 }
-
+/* grid layout 1 */
 .grid-container {
     background-color: black;
     width: 320px;
     height: 300px;
     border-radius: 5px;
     display: grid;
-    grid-template-columns: repeat(1fr, 4);
-    grid-template-rows: repeat(1fr, 5);
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 }
 
-
-
-.AC {
+.klammer-auf {
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 1;
     grid-row-start: 1;
-    grid-row-end: 2;
-    background-color: red;
+    grid-row-end: 1;
+    background-color: darkgray;
 }
 
-.backslash {
+.klammer-zu {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    background-color: darkgray;
+}
+
+.redo {
     grid-column-start: 3;
     grid-column-end: 3;
     grid-row-start: 1;
-    grid-row-end: 2;
-    background-color: darkgrey;
+    grid-row-end: 1;
+    color: black;
+    font-weight: bold;
 }
 
-.x {
+.AC {
     grid-column-start: 4;
     grid-column-end: 4;
     grid-row-start: 1;
-    grid-row-end: 2;
-    background-color: darkgrey;
+    grid-row-end: 1;
+    color: black;
+    font-weight: bold;
 }
 
-.minus {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    background-color: darkgrey;
+
+.operatoren, .AC, .redo {
+    background-color: darkgray;
 }
 
-.plus {
-    background-color: darkgrey;
-}
-
-button {
-    margin: 0;
-    padding: 2px;
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-button:hover {
-    background-color: brown;
-}
-
-.memory-btn {
-    margin: 4px;
-    background-color: grey;
-    color: white;
-    border: 1px solid lightgray;
-}
-
-button:active {
-    background-color: green;
-}
-
-.zero {
-    grid-column-start: 3;
-    grid-column-end: 1;
-    grid-row-start: 5;
-    grid-row-end: 6;
-}
-.dot, .zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine {
+.zero, .one, .two, .three, .four, .five, .six, .seven, .eight, .nine, .dot {
     background-color: grey;
 }
+
 .equals {
-    grid-column-start: 4;
-    grid-column-end: 5;
-    grid-row-start: 4;
-    grid-row-end: 6;
-    background-color: blue;
+    background-color: grey;
+}
+
+.switch-button-div {
+    width: 320px;
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 5px;
+}
+
+.switch-button {
+    padding: 0;
+    width: 100px;
+    height: 45px;
 }
 
 footer {
