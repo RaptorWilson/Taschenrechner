@@ -143,6 +143,76 @@ button:active {
     height: 45px;
 }
 
+/* zweites grid layout */
+
+.grid2 {
+    display: none;
+    background-color: black;
+    width: 320px;
+    height: 300px;
+        border-radius: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.quadrat {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.wurzel {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.fakultät {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.e {
+    grid-column-start: 4;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+.x-hoch-y {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.y-wurzel-x {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+
+
+.pi, .e, .fakultät, .quadrat, .wurzel, .ln, .x-hoch-y, .y-wurzel-x, .sin, .cos, .tan, .arcsin, .arccos, .arctan{
+    background-color: grey;
+}
+
+.rad {
+    background-color: darkgrey;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start:  3;
+    grid-row-end:  5;
+
+}   
+
+
 footer {
     margin-top: 10px;
     text-align: center;
